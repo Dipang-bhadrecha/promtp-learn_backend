@@ -1,34 +1,42 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const { OpenAI } = require('openai');
+const fetch = require('node-fetch'); // or use native fetch in Node v18+
 
 const app = express();
 const port = 3000;
 
-// Middleware
 app.use(cors());
 app.use(express.json());
-
-// Set up your OpenAI client with your API key
-// const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 app.post('/api/chat', async (req, res) => {
   const { prompt } = req.body;
   if (!prompt) return res.status(400).json({ error: 'No prompt provided' });
 
   try {
-    const completion = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo", 
-      messages: [
-        { role: "user", content: prompt }
-      ]
+    const response = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Goog-Api-Key": process.env.GOOGLE_API_KEY
+      },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text: prompt }] }]
+      })
     });
-    const reply = completion.choices[0].message.content;
+
+    if (!response.ok) {
+      const errorBody = await response.text();
+      throw new Error(`Google API error: ${errorBody}`);
+    }
+
+    const data = await response.json();
+    const reply = data?.candidates?.[0]?.content || "No response";
+
     res.json({ reply });
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "OpenAI API error" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: error.message || "Internal server error" });
   }
 });
 
