@@ -1,7 +1,6 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const fetch = require('node-fetch'); // or use native fetch in Node v18+
 
 const app = express();
 const port = 3003;
@@ -27,7 +26,8 @@ app.post('/api/chat', async (req, res) => {
 
     if (!response.ok) {
       const errorBody = await response.text();
-      throw new Error(`Google API error: ${errorBody}`);
+      console.error('❌ Google API Error:', errorBody);
+      throw new Error(`Google API error: ${response.status}`);
     }
 
     const data = await response.json();
@@ -36,8 +36,10 @@ app.post('/api/chat', async (req, res) => {
 
     res.json({ reply });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: error.message || "Internal server error" });
+    console.error('💥 Server Error:', error);
+    res.status(500).json({ 
+      error: error.message || "Internal server error" 
+    });
   }
 });
 
