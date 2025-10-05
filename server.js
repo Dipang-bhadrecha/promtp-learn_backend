@@ -31,7 +31,8 @@ app.post('/api/chat', async (req, res) => {
     }
 
     const data = await response.json();
-    const reply = data?.candidates?.[0]?.content || "No response";
+    // const reply = data?.candidates?.[0]?.content || "No response";
+    const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text || "No response";
 
     res.json({ reply });
   } catch (error) {
