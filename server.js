@@ -6,9 +6,7 @@ const fetch = require('node-fetch'); // or use native fetch in Node v18+
 const app = express();
 const port = 3003;
 
-app.use(cors({
-  origin: 'https://prompt-learn.vercel.app'
-}));
+app.use(cors());
 app.use(express.json());
 
 app.post('/api/chat', async (req, res) => {
