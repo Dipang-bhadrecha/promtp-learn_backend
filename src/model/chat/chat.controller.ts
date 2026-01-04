@@ -1,52 +1,50 @@
 import { Request, Response } from "express";
+import { ChatService } from "./chat.service";
 
-async function getFetch() {
-  if (typeof fetch !== "undefined") return fetch;
-  const mod = await import("node-fetch");
-  return (mod.default ?? mod) as any;
-}
+export const ChatController = {
+  async createConversation(req: Request, res: Response) {
+    const user = (req as any).user;
+    const convo = await ChatService.createConversation(user.id);
+    res.json(convo);
+  },
 
-export const handleChat = async (
-  req: Request,
-  res: Response
-) => {
-  const { prompt } = req.body;
+  async listConversations(req: Request, res: Response) {
+    const user = (req as any).user;
+    const chats = await ChatService.listChats(user.id);
+    res.json(chats);
+  },
 
-  if (!prompt) {
-    return res.status(400).json({ error: "No prompt provided" });
-  }
+  async sendMessage(req: Request, res: Response) {
+    try {
+      const { id } = req.params;
+      const { prompt } = req.body;
 
-  try {
-    const fetchFn = await getFetch();
+      if (!prompt) return res.status(400).json({ error: "Prompt required" });
 
-    const response = await fetchFn(
-      "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "X-Goog-Api-Key": process.env.GOOGLE_API_KEY ?? "",
-        },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: prompt }] }],
-        }),
-      }
-    );
+      const reply = await ChatService.sendMessage(
+        (req as any).user.id,
+        Number(id),
+        prompt
+      );
 
-    if (!response.ok) {
-      const errorBody = await response.text();
-      throw new Error(`Google API error: ${errorBody}`);
+      res.json({ reply });
+    } catch (err: any) {
+      res.status(400).json({ error: err.message });
     }
+  },
 
-    const data = await response.json();
+  async getMessages(req: Request, res: Response) {
+    try {
+      const { id } = req.params;
 
-    const reply =
-      data?.candidates?.[0]?.content?.parts?.[0]?.text ?? "No response";
+      const messages = await ChatService.getMessages(
+        (req as any).user.id,
+        Number(id)
+      );
 
-    res.json({ reply });
-
-  } catch (err: any) {
-    console.error("Chat controller error:", err);
-    res.status(500).json({ error: err?.message ?? "Internal server error" });
+      res.json(messages);
+    } catch (err: any) {
+      res.status(400).json({ error: err.message });
+    }
   }
 };
