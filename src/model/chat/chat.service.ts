@@ -2,6 +2,7 @@ import { ChatRepository } from "./chat.repository";
 import { generateReply } from "./chat.llm";
 
 export const ChatService = {
+    
   async createConversation(userId: number) {
     return ChatRepository.createConversation(userId);
   },
