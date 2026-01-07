@@ -1,17 +1,28 @@
 import { Request, Response } from "express";
 import { ChatService } from "./chat.service";
+import { logger } from "../../middleware/utils/logger";
 
 export const ChatController = {
   async createConversation(req: Request, res: Response) {
-    const user = (req as any).user;
-    const convo = await ChatService.createConversation(user.id);
-    res.json(convo);
+    try {
+      const user = (req as any).user;
+      const convo = await ChatService.createConversation(user.id);
+      res.status(201).json(convo);
+    } catch (err: any) {
+      logger.error(`Error creating conversation: ${err.message}`);
+      res.status(500).json({ error: err.message });
+    }
   },
 
   async listConversations(req: Request, res: Response) {
-    const user = (req as any).user;
-    const chats = await ChatService.listChats(user.id);
-    res.json(chats);
+    try {
+      const user = (req as any).user;
+      const chats = await ChatService.listChats(user.id);
+      res.json(chats);
+    } catch (err: any) {
+      logger.error(`Error listing conversations: ${err.message}`);
+      res.status(500).json({ error: err.message });
+    }
   },
 
   async sendMessage(req: Request, res: Response) {
@@ -19,7 +30,9 @@ export const ChatController = {
       const { id } = req.params;
       const { prompt } = req.body;
 
-      if (!prompt) return res.status(400).json({ error: "Prompt required" });
+      if (!prompt || typeof prompt !== "string" || prompt.trim() === "") {
+        return res.status(400).json({ error: "Valid prompt required" });
+      }
 
       const reply = await ChatService.sendMessage(
         (req as any).user.id,
@@ -29,7 +42,8 @@ export const ChatController = {
 
       res.json({ reply });
     } catch (err: any) {
-      res.status(400).json({ error: err.message });
+      logger.error(`Error sending message: ${err.message}`);
+      res.status(err.message.includes("Forbidden") ? 403 : 500).json({ error: err.message });
     }
   },
 
@@ -44,7 +58,8 @@ export const ChatController = {
 
       res.json(messages);
     } catch (err: any) {
-      res.status(400).json({ error: err.message });
+      logger.error(`Error getting messages: ${err.message}`);
+      res.status(err.message.includes("Forbidden") ? 403 : 500).json({ error: err.message });
     }
   }
 };
