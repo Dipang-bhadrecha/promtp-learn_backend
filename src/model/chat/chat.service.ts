@@ -1,6 +1,6 @@
 import { ChatRepository } from "./chat.repository";
-import { generateReply } from "./chat.llm";
-import { logger } from "../../middleware/utils/logger";
+import { callLLM } from "./chat.llm";
+import  logger  from "../../middleware/utils/logger";
 
 export const ChatService = {
     
@@ -34,7 +34,7 @@ export const ChatService = {
 
       await ChatRepository.addMessage(conversationId, "user", prompt, order);
 
-      const reply = await generateReply(prompt);
+      const reply = await callLLM(prompt);
 
       await ChatRepository.addMessage(conversationId, "assistant", reply, order + 1);
 

@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { ChatService } from "./chat.service";
-import { logger } from "../../middleware/utils/logger";
+import logger  from "../../middleware/utils/logger";
 
 export const ChatController = {
   
