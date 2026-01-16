@@ -3,6 +3,7 @@ import { ChatService } from "./chat.service";
 import { logger } from "../../middleware/utils/logger";
 
 export const ChatController = {
+  
   async createConversation(req: Request, res: Response) {
     try {
       const user = (req as any).user;
