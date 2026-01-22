@@ -1,19 +1,8 @@
 import { Request, Response } from "express";
 import { ChatService } from "./chat.service";
-import logger  from "../../middleware/utils/logger";
+import logger from "../../middleware/utils/logger";
 
 export const ChatController = {
-  
-  async createConversation(req: Request, res: Response) {
-    try {
-      const user = (req as any).user;
-      const convo = await ChatService.createConversation(user.id);
-      res.status(201).json(convo);
-    } catch (err: any) {
-      logger.error(`Error creating conversation: ${err.message}`);
-      res.status(500).json({ error: err.message });
-    }
-  },
 
   async listConversations(req: Request, res: Response) {
     try {
@@ -45,6 +34,29 @@ export const ChatController = {
     } catch (err: any) {
       logger.error(`Error sending message: ${err.message}`);
       res.status(err.message.includes("Forbidden") ? 403 : 500).json({ error: err.message });
+    }
+  },
+
+  // create new chat + send first message
+  async sendFirstMessage(req: Request, res: Response) {
+    try {
+      const { prompt } = req.body;
+
+      if (!prompt || prompt.trim() === "") {
+        return res.status(400).json({ error: "Valid prompt required" });
+      }
+
+      const result = await ChatService.sendFirstMessage(
+        (req as any).user.id,
+        prompt
+      );
+
+      res.json(result);
+      // → { conversationId, reply }
+
+    } catch (err: any) {
+      logger.error(`Error sending first message: ${err.message}`);
+      res.status(500).json({ error: err.message });
     }
   },
 

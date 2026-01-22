@@ -1,6 +1,7 @@
 import pool from "../../config/db";
 
 export const ChatRepository = {
+
   async createConversation(userId: number) {
     const res = await pool.query(
       `INSERT INTO conversations (user_id, title)
@@ -62,5 +63,13 @@ export const ChatRepository = {
       `UPDATE conversations SET updated_at = NOW() WHERE id = $1`,
       [conversationId]
     );
-  }
+  },
+
+  async updateConversationTitle(conversationId: number, title: string) {
+  await pool.query(
+    `UPDATE conversations SET title=$1 WHERE id=$2`,
+    [title, conversationId]
+  );
+}
+
 };
