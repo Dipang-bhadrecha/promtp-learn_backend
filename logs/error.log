@@ -1,2 +1,9 @@
 2026-01-16 23:29:54:2954 [31merror[39m: [31mFailed to send message: Forbidden: You don't have access to this conversation[39m
 2026-01-16 23:29:54:2954 [31merror[39m: [31mError sending message: Forbidden: You don't have access to this conversation[39m
+2026-01-23 20:53:17:5317 [31merror[39m: [31mError sending message: Cannot destructure property 'prompt' of 'req.body' as it is undefined.[39m
+2026-01-23 20:53:30:5330 [31merror[39m: [31mError sending first message: Cannot destructure property 'prompt' of 'req.body' as it is undefined.[39m
+2026-01-23 20:53:33:5333 [31merror[39m: [31mError sending first message: Cannot destructure property 'prompt' of 'req.body' as it is undefined.[39m
+2026-01-23 20:53:37:5337 [31merror[39m: [31mError sending first message: Cannot destructure property 'prompt' of 'req.body' as it is undefined.[39m
+2026-01-23 20:53:41:5341 [31merror[39m: [31mError sending first message: Cannot destructure property 'prompt' of 'req.body' as it is undefined.[39m
+2026-01-23 20:53:47:5347 [31merror[39m: [31mError sending first message: Cannot destructure property 'prompt' of 'req.body' as it is undefined.[39m
+2026-01-23 21:06:25:625 [31merror[39m: [31mError sending first message: Cannot destructure property 'prompt' of 'req.body' as it is undefined.[39m
