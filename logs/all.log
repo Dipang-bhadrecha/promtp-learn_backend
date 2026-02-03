@@ -62,3 +62,5 @@
 2026-02-03 19:06:53:653 [31merror[39m: [31mFailed to send first message: AI service failed: 500[39m
 2026-02-03 19:06:53:653 [31merror[39m: [31mError sending first message: AI service failed: 500[39m
 2026-02-03 19:12:25:1225 [31merror[39m: [31mTitle generation failed: AI service failed: 422[39m
+2026-02-03 23:54:19:5419 [31merror[39m: [31mFailed to send message: request to http://localhost:8001/ai/generate failed, reason: connect ECONNREFUSED 127.0.0.1:8001[39m
+2026-02-03 23:54:19:5419 [31merror[39m: [31mError sending message: request to http://localhost:8001/ai/generate failed, reason: connect ECONNREFUSED 127.0.0.1:8001[39m

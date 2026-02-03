@@ -16,39 +16,6 @@ interface AIGenerateResponse {
   };
 }
 
-
-// export async function callLLM(prompt: string): Promise<string> {
-//   if (!process.env.GOOGLE_API_KEY) {
-//     throw new Error("Google API key not configured");
-//   }
-
-//   const response = await fetch(
-//     "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent",
-//     {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//         "X-Goog-Api-Key": process.env.GOOGLE_API_KEY
-//       },
-//       body: JSON.stringify({
-//         contents: [{ parts: [{ text: prompt }] }]
-//       })
-//     }
-//   );
-
-//   if (!response.ok) {
-//     const err = await response.text();
-//     throw new Error("Google API Error: " + err);
-//   }
-
-//   const data = (await response.json()) as GoogleApiResponse;
-//   return (
-//     data?.candidates?.[0]?.content?.parts?.[0]?.text || "No response"
-//   );
-// }
-
-// chat.llm.ts
-
 export async function callLLM(payload: {
   userId: number;
   conversationId: number;
