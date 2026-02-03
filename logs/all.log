@@ -7,3 +7,58 @@
 2026-01-23 20:53:41:5341 [31merror[39m: [31mError sending first message: Cannot destructure property 'prompt' of 'req.body' as it is undefined.[39m
 2026-01-23 20:53:47:5347 [31merror[39m: [31mError sending first message: Cannot destructure property 'prompt' of 'req.body' as it is undefined.[39m
 2026-01-23 21:06:25:625 [31merror[39m: [31mError sending first message: Cannot destructure property 'prompt' of 'req.body' as it is undefined.[39m
+2026-01-29 18:58:11:5811 [31merror[39m: [31mError sending first message: Cannot destructure property 'prompt' of 'req.body' as it is undefined.[39m
+2026-01-29 19:34:44:3444 [31merror[39m: [31mFailed to get messages: invalid input syntax for type integer: "NaN"[39m
+2026-01-29 19:34:44:3444 [31merror[39m: [31mError getting messages: invalid input syntax for type integer: "NaN"[39m
+2026-02-03 13:20:11:2011 [31merror[39m: [31mFailed to send message: column "role" does not exist[39m
+2026-02-03 13:20:11:2011 [31merror[39m: [31mError sending message: column "role" does not exist[39m
+2026-02-03 13:21:08:218 [31merror[39m: [31mFailed to send message: column "role" does not exist[39m
+2026-02-03 13:21:08:218 [31merror[39m: [31mError sending message: column "role" does not exist[39m
+2026-02-03 13:21:50:2150 [31merror[39m: [31mFailed to send first message: column "role" does not exist[39m
+2026-02-03 13:21:50:2150 [31merror[39m: [31mError sending first message: column "role" does not exist[39m
+2026-02-03 13:22:22:2222 [31merror[39m: [31mFailed to send message: column "role" does not exist[39m
+2026-02-03 13:22:22:2222 [31merror[39m: [31mError sending message: column "role" does not exist[39m
+2026-02-03 13:29:03:293 [31merror[39m: [31mFailed to send message: AI service failed: 422[39m
+2026-02-03 13:29:03:293 [31merror[39m: [31mError sending message: AI service failed: 422[39m
+2026-02-03 13:33:27:3327 [31merror[39m: [31mFailed to send message: AI service failed: 422[39m
+2026-02-03 13:33:27:3327 [31merror[39m: [31mError sending message: AI service failed: 422[39m
+2026-02-03 13:33:49:3349 [31merror[39m: [31mFailed to send message: AI service failed: 422[39m
+2026-02-03 13:33:49:3349 [31merror[39m: [31mError sending message: AI service failed: 422[39m
+2026-02-03 13:34:20:3420 [31merror[39m: [31mFailed to send first message: AI service failed: 422[39m
+2026-02-03 13:34:20:3420 [31merror[39m: [31mError sending first message: AI service failed: 422[39m
+2026-02-03 13:35:19:3519 [31merror[39m: [31mFailed to send message: AI service failed: 422[39m
+2026-02-03 13:35:19:3519 [31merror[39m: [31mError sending message: AI service failed: 422[39m
+2026-02-03 13:59:46:5946 [31merror[39m: [31mFailed to send message: request to http://localhost:8001/ai/generate failed, reason: connect ECONNREFUSED 127.0.0.1:8001[39m
+2026-02-03 13:59:46:5946 [31merror[39m: [31mError sending message: request to http://localhost:8001/ai/generate failed, reason: connect ECONNREFUSED 127.0.0.1:8001[39m
+2026-02-03 14:02:18:218 [31merror[39m: [31mTitle generation failed: AI service failed: 422[39m
+2026-02-03 14:02:48:248 [31merror[39m: [31mTitle generation failed: AI service failed: 422[39m
+2026-02-03 14:51:54:5154 [31merror[39m: [31mFailed to send message: Forbidden: You don't have access to this conversation[39m
+2026-02-03 14:51:54:5154 [31merror[39m: [31mError sending message: Forbidden: You don't have access to this conversation[39m
+2026-02-03 14:52:10:5210 [31merror[39m: [31mFailed to send first message: request to http://localhost:8001/ai/generate failed, reason: connect ECONNREFUSED 127.0.0.1:8001[39m
+2026-02-03 14:52:10:5210 [31merror[39m: [31mError sending first message: request to http://localhost:8001/ai/generate failed, reason: connect ECONNREFUSED 127.0.0.1:8001[39m
+2026-02-03 16:52:42:5242 [31merror[39m: [31mFailed to send first message: AI service failed: 500[39m
+2026-02-03 16:52:42:5242 [31merror[39m: [31mError sending first message: AI service failed: 500[39m
+2026-02-03 16:54:46:5446 [31merror[39m: [31mTitle generation failed: AI service failed: 422[39m
+2026-02-03 16:56:16:5616 [31merror[39m: [31mFailed to send message: AI service failed: 500[39m
+2026-02-03 16:56:16:5616 [31merror[39m: [31mError sending message: AI service failed: 500[39m
+2026-02-03 16:56:39:5639 [31merror[39m: [31mFailed to send message: AI service failed: 500[39m
+2026-02-03 16:56:39:5639 [31merror[39m: [31mError sending message: AI service failed: 500[39m
+2026-02-03 16:56:48:5648 [31merror[39m: [31mFailed to send message: AI service failed: 500[39m
+2026-02-03 16:56:48:5648 [31merror[39m: [31mError sending message: AI service failed: 500[39m
+2026-02-03 17:01:15:115 [31merror[39m: [31mTitle generation failed: AI service failed: 422[39m
+2026-02-03 17:01:28:128 [31merror[39m: [31mFailed to send message: AI service failed: 500[39m
+2026-02-03 17:01:28:128 [31merror[39m: [31mError sending message: AI service failed: 500[39m
+2026-02-03 17:28:33:2833 [31merror[39m: [31mFailed to send message: AI service failed: 422[39m
+2026-02-03 17:28:33:2833 [31merror[39m: [31mError sending message: AI service failed: 422[39m
+2026-02-03 18:37:18:3718 [31merror[39m: [31mFailed to send message: AI service failed: 500[39m
+2026-02-03 18:37:18:3718 [31merror[39m: [31mError sending message: AI service failed: 500[39m
+2026-02-03 18:39:27:3927 [31merror[39m: [31mFailed to send first message: AI service failed: 500[39m
+2026-02-03 18:39:27:3927 [31merror[39m: [31mError sending first message: AI service failed: 500[39m
+2026-02-03 18:39:51:3951 [31merror[39m: [31mFailed to send first message: AI service failed: 500[39m
+2026-02-03 18:39:51:3951 [31merror[39m: [31mError sending first message: AI service failed: 500[39m
+2026-02-03 18:40:01:401 [31merror[39m: [31mTitle generation failed: AI service failed: 422[39m
+2026-02-03 19:05:24:524 [31merror[39m: [31mFailed to send message: AI service failed: 500[39m
+2026-02-03 19:05:24:524 [31merror[39m: [31mError sending message: AI service failed: 500[39m
+2026-02-03 19:06:53:653 [31merror[39m: [31mFailed to send first message: AI service failed: 500[39m
+2026-02-03 19:06:53:653 [31merror[39m: [31mError sending first message: AI service failed: 500[39m
+2026-02-03 19:12:25:1225 [31merror[39m: [31mTitle generation failed: AI service failed: 422[39m
