@@ -13,6 +13,7 @@ export const ChatService = {
     }
   },
 
+  // ===== NORMAL MESSAGE (existing conversation) =====
   async sendMessage(userId: number, conversationId: number, prompt: string) {
     try {
       const owner = await ChatRepository.getConversationOwner(conversationId);
@@ -24,18 +25,8 @@ export const ChatService = {
       const order = await ChatRepository.getMessageCount(conversationId);
 
       await ChatRepository.addMessage(conversationId, "user", prompt, order);
-      const recentMessages = await ChatRepository.getRecentMessages(conversationId, 10);
 
-      // const reply = await callLLM(prompt);
-      const reply = await callLLM({
-        userId,
-        conversationId,
-        prompt,
-        messages: recentMessages.map(m => ({
-          role: m.role,
-          content: m.content,
-        })),
-      });
+      const reply = await callLLM(prompt);
 
       await ChatRepository.addMessage(conversationId, "assistant", reply, order + 1);
 
@@ -48,6 +39,7 @@ export const ChatService = {
     }
   },
 
+  // ===== PRIVATE helper: title generator =====
   async generateConversationTitle(prompt: string, reply: string) {
     const titlePrompt = `
 You are naming a chat conversation.
@@ -64,30 +56,25 @@ Title:
     return title.replace(/["\n]/g, "").trim();
   },
 
+  // ===== FIRST MESSAGE (auto-creates conversation) =====
   async sendFirstMessage(userId: number, prompt: string) {
     try {
-
+      // 1. Create conversation with temporary title
       const conversation = await ChatRepository.createConversation(userId);
       const conversationId = conversation.id;
-      const recentMessages = await ChatRepository.getRecentMessages(conversationId, 10);
 
+      // 2. Store first user message
       await ChatRepository.addMessage(conversationId, "user", prompt, 0);
 
-      // const reply = await callLLM(prompt);
-      const reply = await callLLM({
-        userId,
-        conversationId,
-        prompt,
-        messages: recentMessages.map(m => ({
-          role: m.role,
-          content: m.content,
-        })),
-      });
+      // 3. Call LLM for assistant reply
+      const reply = await callLLM(prompt);
 
+      // 4. Store assistant reply
       await ChatRepository.addMessage(conversationId, "assistant", reply, 1);
 
       await ChatRepository.updateConversationTimestamp(conversationId);
 
+      // 5. Background title generation (non-blocking)
       ChatService.generateConversationTitle(prompt, reply)
         .then((title) => {
           return ChatRepository.updateConversationTitle(conversationId, title);
@@ -96,6 +83,7 @@ Title:
           logger.error("Title generation failed:", err);
         });
 
+      // 6. Immediate response
       return { conversationId, reply };
 
     } catch (error: any) {
@@ -104,6 +92,7 @@ Title:
     }
   },
 
+  // ===== FETCH MESSAGES =====
   async getMessages(userId: number, conversationId: number) {
     try {
       const owner = await ChatRepository.getConversationOwner(conversationId);

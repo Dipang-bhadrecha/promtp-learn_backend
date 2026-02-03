@@ -1,12 +1,7 @@
 import jwt from "jsonwebtoken";
 import { Request, Response, NextFunction } from "express";
-import { JwtUser } from "../../types/jwt";
 
-export function authGuard(
-  req: Request,
-  res: Response,
-  next: NextFunction
-) {
+export function authGuard(req: Request, res: Response, next: NextFunction) {
   const header = req.headers.authorization;
 
   if (!header) {
@@ -16,12 +11,8 @@ export function authGuard(
   const token = header.split(" ")[1];
 
   try {
-    const decoded = jwt.verify(
-      token,
-      process.env.JWT_SECRET!
-    ) as JwtUser;
-
-    req.user = decoded; 
+    const decoded = jwt.verify(token, process.env.JWT_SECRET!);
+    req.user = decoded; // attach user to request
     next();
   } catch {
     return res.status(401).json({ error: "Invalid token" });
