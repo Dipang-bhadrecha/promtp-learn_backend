@@ -1,18 +1,15 @@
-export type User = {
-  id: number;
+export interface RequestOtpBody {
   email: string;
-  password: string;
-  created_at: Date;
-};
+}
 
-export type RegisterDto = {
+export interface VerifyOtpBody {
+  email: string;
+  otp: string;
+}
+
+export interface User {
   email: string;
   password: string;
   confirm_password: string;
-  name?: string;
-};
-
-export type LoginDto = {
-  email: string;
-  password: string;
-};
+  created_at?: Date;
+}

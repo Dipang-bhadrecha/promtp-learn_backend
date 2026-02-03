@@ -1,16 +1,15 @@
 {
-	"compilerOptions": {
-		"target": "ES2020",
-		"module": "CommonJS",
-		"outDir": "dist",
-		"rootDir": ".", // what is means . here for root directory what if i write a src here
-		"strict": true,
-		"esModuleInterop": true,
-		"forceConsistentCasingInFileNames": true,
-		"skipLibCheck": true,
-		"resolveJsonModule": true
-	},
-	"include": ["**/*.ts"],
-    // "include": ["src/**/*"] - why this not and and what is this line means
-	"exclude": ["node_modules", "dist"]
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS",
+    "outDir": "dist",
+    "rootDir": "src",
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }
