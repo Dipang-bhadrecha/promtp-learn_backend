@@ -7,3 +7,35 @@
 2026-01-23 20:53:41:5341 [31merror[39m: [31mError sending first message: Cannot destructure property 'prompt' of 'req.body' as it is undefined.[39m
 2026-01-23 20:53:47:5347 [31merror[39m: [31mError sending first message: Cannot destructure property 'prompt' of 'req.body' as it is undefined.[39m
 2026-01-23 21:06:25:625 [31merror[39m: [31mError sending first message: Cannot destructure property 'prompt' of 'req.body' as it is undefined.[39m
+2026-02-03 23:57:00:570 [31merror[39m: [31mFailed to send message: Google API Error: {[39m
+[31m  "error": {[39m
+[31m    "code": 403,[39m
+[31m    "message": "Your API key was reported as leaked. Please use another API key.",[39m
+[31m    "status": "PERMISSION_DENIED"[39m
+[31m  }[39m
+[31m}[39m
+[31m[39m
+2026-02-03 23:57:00:570 [31merror[39m: [31mError sending message: Google API Error: {[39m
+[31m  "error": {[39m
+[31m    "code": 403,[39m
+[31m    "message": "Your API key was reported as leaked. Please use another API key.",[39m
+[31m    "status": "PERMISSION_DENIED"[39m
+[31m  }[39m
+[31m}[39m
+[31m[39m
+2026-02-03 23:57:30:5730 [31merror[39m: [31mFailed to send message: Google API Error: {[39m
+[31m  "error": {[39m
+[31m    "code": 403,[39m
+[31m    "message": "Your API key was reported as leaked. Please use another API key.",[39m
+[31m    "status": "PERMISSION_DENIED"[39m
+[31m  }[39m
+[31m}[39m
+[31m[39m
+2026-02-03 23:57:30:5730 [31merror[39m: [31mError sending message: Google API Error: {[39m
+[31m  "error": {[39m
+[31m    "code": 403,[39m
+[31m    "message": "Your API key was reported as leaked. Please use another API key.",[39m
+[31m    "status": "PERMISSION_DENIED"[39m
+[31m  }[39m
+[31m}[39m
+[31m[39m
