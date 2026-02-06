@@ -60,7 +60,12 @@ Assistant: ${reply}
 Title:
 `;
 
-    const title = await callLLM(titlePrompt);
+    const title = await callLLM({
+      userId: 0,
+      conversationId: 0,
+      prompt: titlePrompt,
+      messages: [],
+    });
     return title.replace(/["\n]/g, "").trim();
   },
 
@@ -69,9 +74,11 @@ Title:
 
       const conversation = await ChatRepository.createConversation(userId);
       const conversationId = conversation.id;
-      const recentMessages = await ChatRepository.getRecentMessages(conversationId, 10);
 
       await ChatRepository.addMessage(conversationId, "user", prompt, 0);
+
+      // Get recent messages AFTER adding the user message
+      const recentMessages = await ChatRepository.getRecentMessages(conversationId, 10);
 
       // const reply = await callLLM(prompt);
       const reply = await callLLM({

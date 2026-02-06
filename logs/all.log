@@ -64,3 +64,15 @@
 2026-02-03 19:12:25:1225 [31merror[39m: [31mTitle generation failed: AI service failed: 422[39m
 2026-02-03 23:54:19:5419 [31merror[39m: [31mFailed to send message: request to http://localhost:8001/ai/generate failed, reason: connect ECONNREFUSED 127.0.0.1:8001[39m
 2026-02-03 23:54:19:5419 [31merror[39m: [31mError sending message: request to http://localhost:8001/ai/generate failed, reason: connect ECONNREFUSED 127.0.0.1:8001[39m
+2026-02-06 14:49:57:4957 [31merror[39m: [31mFailed to send message: request to http://localhost:8001/ai/generate failed, reason: connect ECONNREFUSED 127.0.0.1:8001[39m
+2026-02-06 14:49:57:4957 [31merror[39m: [31mError sending message: request to http://localhost:8001/ai/generate failed, reason: connect ECONNREFUSED 127.0.0.1:8001[39m
+2026-02-06 14:54:49:5449 [31merror[39m: [31mFailed to send message: AI service failed: 500[39m
+2026-02-06 14:54:49:5449 [31merror[39m: [31mError sending message: AI service failed: 500[39m
+2026-02-06 14:58:05:585 [31merror[39m: [31mFailed to send message: AI service failed: 500[39m
+2026-02-06 14:58:05:585 [31merror[39m: [31mError sending message: AI service failed: 500[39m
+2026-02-06 21:04:49:449 [31merror[39m: [31mFailed to send message: request to http://localhost:8001/ai/generate failed, reason: connect ECONNREFUSED 127.0.0.1:8001[39m
+2026-02-06 21:04:49:449 [31merror[39m: [31mError sending message: request to http://localhost:8001/ai/generate failed, reason: connect ECONNREFUSED 127.0.0.1:8001[39m
+2026-02-06 21:05:00:50 [31merror[39m: [31mFailed to send message: request to http://localhost:8001/ai/generate failed, reason: connect ECONNREFUSED 127.0.0.1:8001[39m
+2026-02-06 21:05:00:50 [31merror[39m: [31mError sending message: request to http://localhost:8001/ai/generate failed, reason: connect ECONNREFUSED 127.0.0.1:8001[39m
+2026-02-06 21:07:38:738 [31merror[39m: [31mFailed to send message: request to http://localhost:8001/ai/generate failed, reason: connect ECONNREFUSED 127.0.0.1:8001[39m
+2026-02-06 21:07:38:738 [31merror[39m: [31mError sending message: request to http://localhost:8001/ai/generate failed, reason: connect ECONNREFUSED 127.0.0.1:8001[39m
