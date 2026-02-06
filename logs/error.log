@@ -39,3 +39,95 @@
 [31m  }[39m
 [31m}[39m
 [31m[39m
+2026-02-06 00:05:16:516 [31merror[39m: [31mFailed to send first message: Google API Error: {[39m
+[31m  "error": {[39m
+[31m    "code": 400,[39m
+[31m    "message": "API key expired. Please renew the API key.",[39m
+[31m    "status": "INVALID_ARGUMENT",[39m
+[31m    "details": [[39m
+[31m      {[39m
+[31m        "@type": "type.googleapis.com/google.rpc.ErrorInfo",[39m
+[31m        "reason": "API_KEY_INVALID",[39m
+[31m        "domain": "googleapis.com",[39m
+[31m        "metadata": {[39m
+[31m          "service": "generativelanguage.googleapis.com"[39m
+[31m        }[39m
+[31m      },[39m
+[31m      {[39m
+[31m        "@type": "type.googleapis.com/google.rpc.LocalizedMessage",[39m
+[31m        "locale": "en-US",[39m
+[31m        "message": "API key expired. Please renew the API key."[39m
+[31m      }[39m
+[31m    ][39m
+[31m  }[39m
+[31m}[39m
+[31m[39m
+2026-02-06 00:05:16:516 [31merror[39m: [31mError sending first message: Google API Error: {[39m
+[31m  "error": {[39m
+[31m    "code": 400,[39m
+[31m    "message": "API key expired. Please renew the API key.",[39m
+[31m    "status": "INVALID_ARGUMENT",[39m
+[31m    "details": [[39m
+[31m      {[39m
+[31m        "@type": "type.googleapis.com/google.rpc.ErrorInfo",[39m
+[31m        "reason": "API_KEY_INVALID",[39m
+[31m        "domain": "googleapis.com",[39m
+[31m        "metadata": {[39m
+[31m          "service": "generativelanguage.googleapis.com"[39m
+[31m        }[39m
+[31m      },[39m
+[31m      {[39m
+[31m        "@type": "type.googleapis.com/google.rpc.LocalizedMessage",[39m
+[31m        "locale": "en-US",[39m
+[31m        "message": "API key expired. Please renew the API key."[39m
+[31m      }[39m
+[31m    ][39m
+[31m  }[39m
+[31m}[39m
+[31m[39m
+2026-02-06 00:05:32:532 [31merror[39m: [31mFailed to send first message: Google API Error: {[39m
+[31m  "error": {[39m
+[31m    "code": 400,[39m
+[31m    "message": "API key expired. Please renew the API key.",[39m
+[31m    "status": "INVALID_ARGUMENT",[39m
+[31m    "details": [[39m
+[31m      {[39m
+[31m        "@type": "type.googleapis.com/google.rpc.ErrorInfo",[39m
+[31m        "reason": "API_KEY_INVALID",[39m
+[31m        "domain": "googleapis.com",[39m
+[31m        "metadata": {[39m
+[31m          "service": "generativelanguage.googleapis.com"[39m
+[31m        }[39m
+[31m      },[39m
+[31m      {[39m
+[31m        "@type": "type.googleapis.com/google.rpc.LocalizedMessage",[39m
+[31m        "locale": "en-US",[39m
+[31m        "message": "API key expired. Please renew the API key."[39m
+[31m      }[39m
+[31m    ][39m
+[31m  }[39m
+[31m}[39m
+[31m[39m
+2026-02-06 00:05:32:532 [31merror[39m: [31mError sending first message: Google API Error: {[39m
+[31m  "error": {[39m
+[31m    "code": 400,[39m
+[31m    "message": "API key expired. Please renew the API key.",[39m
+[31m    "status": "INVALID_ARGUMENT",[39m
+[31m    "details": [[39m
+[31m      {[39m
+[31m        "@type": "type.googleapis.com/google.rpc.ErrorInfo",[39m
+[31m        "reason": "API_KEY_INVALID",[39m
+[31m        "domain": "googleapis.com",[39m
+[31m        "metadata": {[39m
+[31m          "service": "generativelanguage.googleapis.com"[39m
+[31m        }[39m
+[31m      },[39m
+[31m      {[39m
+[31m        "@type": "type.googleapis.com/google.rpc.LocalizedMessage",[39m
+[31m        "locale": "en-US",[39m
+[31m        "message": "API key expired. Please renew the API key."[39m
+[31m      }[39m
+[31m    ][39m
+[31m  }[39m
+[31m}[39m
+[31m[39m
