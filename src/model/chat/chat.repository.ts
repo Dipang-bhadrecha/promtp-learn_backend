@@ -87,6 +87,18 @@ export const ChatRepository = {
       `UPDATE conversations SET title=$1 WHERE id=$2`,
       [title, conversationId]
     );
+  },
+
+  async deleteConversation(conversationId: number) {
+    // Delete messages first to satisfy FK constraints if cascade isn't set
+    await pool.query(
+      `DELETE FROM messages WHERE conversation_id = $1`,
+      [conversationId]
+    );
+    await pool.query(
+      `DELETE FROM conversations WHERE id = $1`,
+      [conversationId]
+    );
   }
 
 };

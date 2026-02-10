@@ -74,5 +74,43 @@ export const ChatController = {
       logger.error(`Error getting messages: ${err.message}`);
       res.status(err.message.includes("Forbidden") ? 403 : 500).json({ error: err.message });
     }
+  },
+
+  async renameConversation(req: Request, res: Response) {
+    try {
+      const { id } = req.params;
+      const { title } = req.body;
+
+      if (!title || typeof title !== "string" || title.trim() === "") {
+        return res.status(400).json({ error: "Valid title required" });
+      }
+
+      await ChatService.renameConversation(
+        (req as any).user.id,
+        Number(id),
+        title.trim()
+      );
+
+      res.json({ ok: true });
+    } catch (err: any) {
+      logger.error(`Error renaming conversation: ${err.message}`);
+      res.status(err.message.includes("Forbidden") ? 403 : 500).json({ error: err.message });
+    }
+  },
+
+  async deleteConversation(req: Request, res: Response) {
+    try {
+      const { id } = req.params;
+
+      await ChatService.deleteConversation(
+        (req as any).user.id,
+        Number(id)
+      );
+
+      res.json({ ok: true });
+    } catch (err: any) {
+      logger.error(`Error deleting conversation: ${err.message}`);
+      res.status(err.message.includes("Forbidden") ? 403 : 500).json({ error: err.message });
+    }
   }
 };

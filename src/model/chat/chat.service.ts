@@ -124,6 +124,37 @@ Title:
       logger.error(`Failed to get messages: ${error.message}`);
       throw error;
     }
+  },
+
+  async renameConversation(userId: number, conversationId: number, title: string) {
+    try {
+      const owner = await ChatRepository.getConversationOwner(conversationId);
+
+      if (owner !== userId) {
+        throw new Error("Forbidden: You don't have access to this conversation");
+      }
+
+      await ChatRepository.updateConversationTitle(conversationId, title);
+      await ChatRepository.updateConversationTimestamp(conversationId);
+    } catch (error: any) {
+      logger.error(`Failed to rename conversation: ${error.message}`);
+      throw error;
+    }
+  },
+
+  async deleteConversation(userId: number, conversationId: number) {
+    try {
+      const owner = await ChatRepository.getConversationOwner(conversationId);
+
+      if (owner !== userId) {
+        throw new Error("Forbidden: You don't have access to this conversation");
+      }
+
+      await ChatRepository.deleteConversation(conversationId);
+    } catch (error: any) {
+      logger.error(`Failed to delete conversation: ${error.message}`);
+      throw error;
+    }
   }
 
 };
