@@ -131,3 +131,75 @@
 [31m  }[39m
 [31m}[39m
 [31m[39m
+2026-02-12 19:16:14:1614 [31merror[39m: [31mFailed to send message: Google API Error: {[39m
+[31m  "error": {[39m
+[31m    "code": 429,[39m
+[31m    "message": "Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.",[39m
+[31m    "status": "RESOURCE_EXHAUSTED"[39m
+[31m  }[39m
+[31m}[39m
+[31m[39m
+2026-02-12 19:16:14:1614 [31merror[39m: [31mError sending message: Google API Error: {[39m
+[31m  "error": {[39m
+[31m    "code": 429,[39m
+[31m    "message": "Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.",[39m
+[31m    "status": "RESOURCE_EXHAUSTED"[39m
+[31m  }[39m
+[31m}[39m
+[31m[39m
+2026-02-12 19:16:17:1617 [31merror[39m: [31mFailed to send message: Google API Error: {[39m
+[31m  "error": {[39m
+[31m    "code": 429,[39m
+[31m    "message": "Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.",[39m
+[31m    "status": "RESOURCE_EXHAUSTED"[39m
+[31m  }[39m
+[31m}[39m
+[31m[39m
+2026-02-12 19:16:17:1617 [31merror[39m: [31mError sending message: Google API Error: {[39m
+[31m  "error": {[39m
+[31m    "code": 429,[39m
+[31m    "message": "Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.",[39m
+[31m    "status": "RESOURCE_EXHAUSTED"[39m
+[31m  }[39m
+[31m}[39m
+[31m[39m
+2026-02-12 19:16:39:1639 [31merror[39m: [31mFailed to send message: Google API Error: {[39m
+[31m  "error": {[39m
+[31m    "code": 429,[39m
+[31m    "message": "Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.",[39m
+[31m    "status": "RESOURCE_EXHAUSTED"[39m
+[31m  }[39m
+[31m}[39m
+[31m[39m
+2026-02-12 19:16:39:1639 [31merror[39m: [31mError sending message: Google API Error: {[39m
+[31m  "error": {[39m
+[31m    "code": 429,[39m
+[31m    "message": "Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.",[39m
+[31m    "status": "RESOURCE_EXHAUSTED"[39m
+[31m  }[39m
+[31m}[39m
+[31m[39m
+2026-02-12 19:18:09:189 [31merror[39m: [31mFailed to send first message: Google API Error: {[39m
+[31m  "error": {[39m
+[31m    "code": 429,[39m
+[31m    "message": "Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.",[39m
+[31m    "status": "RESOURCE_EXHAUSTED"[39m
+[31m  }[39m
+[31m}[39m
+[31m[39m
+2026-02-12 19:18:09:189 [31merror[39m: [31mError sending first message: Google API Error: {[39m
+[31m  "error": {[39m
+[31m    "code": 429,[39m
+[31m    "message": "Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.",[39m
+[31m    "status": "RESOURCE_EXHAUSTED"[39m
+[31m  }[39m
+[31m}[39m
+[31m[39m
+2026-02-12 19:18:42:1842 [31merror[39m: [31mTitle generation failed: Google API Error: {[39m
+[31m  "error": {[39m
+[31m    "code": 429,[39m
+[31m    "message": "Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.",[39m
+[31m    "status": "RESOURCE_EXHAUSTED"[39m
+[31m  }[39m
+[31m}[39m
+[31m[39m
