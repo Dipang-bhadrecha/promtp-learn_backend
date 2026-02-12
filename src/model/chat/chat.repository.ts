@@ -22,6 +22,23 @@ export const ChatRepository = {
     return res.rows;
   },
 
+  async getRecentMessages(conversationId: number, limit: number) {
+    const res = await pool.query(
+      `
+    SELECT
+      sender AS role,
+      content
+    FROM messages
+    WHERE conversation_id = $1
+    ORDER BY order_index DESC
+    LIMIT $2
+    `,
+      [conversationId, limit]
+    );
+
+    return res.rows;
+  },
+
   async getConversationOwner(conversationId: number) {
     const res = await pool.query(
       `SELECT user_id FROM conversations WHERE id = $1`,
@@ -66,10 +83,22 @@ export const ChatRepository = {
   },
 
   async updateConversationTitle(conversationId: number, title: string) {
-  await pool.query(
-    `UPDATE conversations SET title=$1 WHERE id=$2`,
-    [title, conversationId]
-  );
-}
+    await pool.query(
+      `UPDATE conversations SET title=$1 WHERE id=$2`,
+      [title, conversationId]
+    );
+  },
+
+  async deleteConversation(conversationId: number) {
+    // Delete messages first to satisfy FK constraints if cascade isn't set
+    await pool.query(
+      `DELETE FROM messages WHERE conversation_id = $1`,
+      [conversationId]
+    );
+    await pool.query(
+      `DELETE FROM conversations WHERE id = $1`,
+      [conversationId]
+    );
+  }
 
 };

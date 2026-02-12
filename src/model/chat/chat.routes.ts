@@ -15,5 +15,9 @@ router.get("/", authGuard, ChatController.listConversations);
 
 router.get("/:id/messages", authGuard, ChatController.getMessages);
 
+router.patch("/:id", authGuard, ChatController.renameConversation);
+
+router.delete("/:id", authGuard, ChatController.deleteConversation);
+
 
 export default router;

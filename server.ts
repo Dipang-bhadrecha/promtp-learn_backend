@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 import authRoutes from "./src/model/auth/auth.routes";
 import chatRoutes from "./src/model/chat/chat.routes";
+import promptRoutes from "./src/model/prompt/prompt.routes";
 
 dotenv.config();
 
@@ -22,6 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 // routes
 app.use("/api/auth", authRoutes);
 app.use("/api/chat", chatRoutes);
+app.use("/api/prompts", promptRoutes);
 
 // start server
 app.listen(PORT, () => {
