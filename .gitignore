@@ -1,4 +1,4 @@
 .env
 /generated/prisma
-/all.log
-/error.log
+logs/
+*.log
