@@ -13,7 +13,10 @@ const PORT = Number(process.env.PORT) || 4000;
 // middleware
 // app.use(cors());
 app.use(cors({
-  origin: "http://localhost:3000",
+  origin: [
+    "http://localhost:3000",
+    "https://prompt-learn.vercel.app"
+  ],
   credentials: true,
 }));
 
