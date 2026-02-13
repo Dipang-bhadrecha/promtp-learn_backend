@@ -1,9 +1,9 @@
 import dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
-import authRoutes from "../src/model/auth/auth.routes";
-import chatRoutes from "../src/model/chat/chat.routes";
-import promptRoutes from "../src/model/prompt/prompt.routes";
+import authRoutes from "./model/auth/auth.routes";
+import chatRoutes from "./model/chat/chat.routes";
+import promptRoutes from "./model/prompt/prompt.routes";
 
 dotenv.config();
 
